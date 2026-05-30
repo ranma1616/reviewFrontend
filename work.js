@@ -4,4 +4,8 @@ worker.postMessage('start')
 worker.onmessage = (e)=> console.log(e.data);
 
 // worker.js
-onmessage = (e)=> 
+onmessage = (e)=> {
+  // 耗时计算
+  let result = heavyComputation();
+  postMessage(result);
+}
